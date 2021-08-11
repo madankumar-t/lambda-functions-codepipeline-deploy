@@ -19,10 +19,10 @@ phases:
       - echo deploy serverless framework custom codebase
       - sls package 
       - export AWS_PROFILE="testingserverless"
-      - export  AWS_ACCESS_KEY_ID=AKIAWSAAQH7YK2V7IJXW
-      - export  AWS_SECRET_ACCESS_KEY=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
+      - export AWS_ACCESS_KEY_ID=AKIAWSAAQH7YK2V7IJXW
+      - export AWS_SECRET_ACCESS_KEY=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
       - export AWS_SDK_LOAD_CONFIG=1
-      - sls deploy
+      - sls deploy --profile testingserverless
   
   post_build:
     commands:
