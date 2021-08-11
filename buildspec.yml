@@ -4,8 +4,10 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo install serverless framework
-      - npm install -g serverless
+      
+      - echo install serverless framework 
+      - npm_config_user=root sudo npm install -g serverless
+      
   pre_build:
     commands:
       - echo install pre build commands
