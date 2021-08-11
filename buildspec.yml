@@ -11,7 +11,7 @@ phases:
   pre_build:
     commands:
       - echo install pre build commands
-      - serverless config credentials --provider aws --key AKIAWSAAQH7YK2V7IJXW --secret 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 --profile serverless-admin
+      - serverless config credentials --provider aws --key AKIAWSAAQH7YK2V7IJXW --secret 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 --profile testingserverless
   build:
     commands:
       - echo deployment started `date`
