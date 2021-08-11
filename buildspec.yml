@@ -22,7 +22,7 @@ phases:
       - export AWS_ACCESS_KEY_ID=AKIAWSAAQH7YK2V7IJXW
       - export AWS_SECRET_ACCESS_KEY=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
       - export AWS_SDK_LOAD_CONFIG=1
-      - sls deploy --profile default
+      - sls deploy
   
   post_build:
     commands:
