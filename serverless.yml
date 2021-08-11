@@ -1,0 +1,93 @@
+service: lambda-service
+package:
+  exclude:
+    - node_modules/**
+
+provider:
+  name: aws
+  apiGateway:
+    shouldStartNameWithService: true
+  runtime: nodejs12.x
+  stage: dev
+  region: us-east-1
+  profile: default         
+
+functions:
+  hello:
+    handler: firstone/handler.hello
+    events:
+      - http:
+          method: get
+          path: firstone/hello
+    environment:
+      NODE_PATH: "../:/opt/node_modules"
+    layers:
+      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
+      
+  helloworld:
+    handler: firstone/handler.helloworld
+    events:
+      - http:
+          method: get
+          path: firstone/helloworld
+    environment:
+      NODE_PATH: "../:/opt/node_modules"
+    layers:
+      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
+      
+  secondfunction1:
+    handler: secondone/handler.secondfunction1
+    events:
+      - http:
+          method: get
+          path: secondone/secondfunction1
+    environment:
+      NODE_PATH: "../:/opt/node_modules"
+    layers:
+      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
+      
+  secondfunction2:
+    handler: secondone/handler.secondfunction2
+    events:
+      - http:
+          method: get
+          path: secondone/secondfunction2
+    environment:
+      NODE_PATH: "./:/opt/node_modules"
+    layers:
+      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
+      
+      
+  ThirdFunction1:
+    handler: thirdone/handler.ThirdFunction1
+    events:
+      - http:
+          method: get
+          path: thirdone/ThirdFunction1
+    environment:
+      NODE_PATH: "./:/opt/node_modules"
+    layers:
+      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
+      
+  ThirdFunction2:
+    handler: thirdone/handler.ThirdFunction2
+    events:
+      - http:
+          method: get
+          path: thirdone/ThirdFunction2
+    environment:
+      NODE_PATH: "./:/opt/node_modules"
+    layers:
+      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
+      
+  ThirdFunction3:
+    handler: thirdone/handler.ThirdFunction3
+    events:
+      - http:
+          method: get
+          path: thirdone/ThirdFunction3
+    environment:
+      NODE_PATH: "./:/opt/node_modules"
+    layers:
+      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
+      
