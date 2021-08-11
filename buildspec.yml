@@ -6,7 +6,7 @@ phases:
     commands:
       
       - echo install serverless framework 
-      - npm_config_user=root sudo npm install -g serverless
+      - npm_config_user=root npm install -g serverless
       
   pre_build:
     commands:
