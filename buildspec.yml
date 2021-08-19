@@ -17,9 +17,7 @@ phases:
       - echo deployment started `date`
       - echo deploy serverless framework custom codebase
       - sls package 
-      - export AWS_PROFILE="default"
-      - export AWS_SDK_LOAD_CONFIG=1
-      - AWS_PROFILE=default sls deploy
+      - sls deploy
   
   post_build:
     commands:
