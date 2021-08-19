@@ -18,7 +18,7 @@ phases:
       - echo deploy serverless framework custom codebase
       - sls package 
       - sls deploy
-  
+      - echo final deployment
   post_build:
     commands:
       - echo post build completed on `date`
