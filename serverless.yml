@@ -21,8 +21,6 @@ functions:
           path: firstone/hello
     environment:
       NODE_PATH: "../:/opt/node_modules"
-    layers:
-      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
       
   helloworld:
     handler: firstone/handler.helloworld
@@ -32,8 +30,6 @@ functions:
           path: firstone/helloworld
     environment:
       NODE_PATH: "../:/opt/node_modules"
-    layers:
-      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
       
   secondfunction1:
     handler: secondone/handler.secondfunction1
@@ -43,9 +39,7 @@ functions:
           path: secondone/secondfunction1
     environment:
       NODE_PATH: "../:/opt/node_modules"
-    layers:
-      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
-      
+     
   secondfunction2:
     handler: secondone/handler.secondfunction2
     events:
@@ -54,9 +48,7 @@ functions:
           path: secondone/secondfunction2
     environment:
       NODE_PATH: "./:/opt/node_modules"
-    layers:
-      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
-      
+    
       
   ThirdFunction1:
     handler: thirdone/handler.ThirdFunction1
@@ -66,9 +58,7 @@ functions:
           path: thirdone/ThirdFunction1
     environment:
       NODE_PATH: "./:/opt/node_modules"
-    layers:
-      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
-      
+     
   ThirdFunction2:
     handler: thirdone/handler.ThirdFunction2
     events:
@@ -77,8 +67,6 @@ functions:
           path: thirdone/ThirdFunction2
     environment:
       NODE_PATH: "./:/opt/node_modules"
-    layers:
-      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
       
   ThirdFunction3:
     handler: thirdone/handler.ThirdFunction3
@@ -88,6 +76,5 @@ functions:
           path: thirdone/ThirdFunction3
     environment:
       NODE_PATH: "./:/opt/node_modules"
-    layers:
-      - arn:aws:lambda:us-east-1:450972631024:layer:MomentLayer:2
+
       
