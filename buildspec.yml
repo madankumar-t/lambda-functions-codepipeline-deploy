@@ -10,7 +10,7 @@ phases:
   pre_build:
     commands:
       - echo install pre build commands
-      - serverless config credentials --provider aws --key XXXXXXXXXXXXXXXXXX --secret /OXlp2uaDJeLXefZi4MdKS --profile default
+      - serverless config credentials --provider aws --key $AWS_ACCESS_KEY_ID --secret $AWS_SECRET_ACCESS_KEY_ID --profile default
       
   build:
     commands:
@@ -18,9 +18,6 @@ phases:
       - echo deploy serverless framework custom codebase
       - sls package 
       - export AWS_PROFILE="default"
-      - export AWS_ACCESS_KEY_ID=XXXXXXXXXXXXXXXXXX
-      - export AWS_SECRET_ACCESS_KEY=I+GotpibuPn25ijQzv/OXlp2uaDJeLXefZi4MdKS
-      - export AWS_DEFAULT_REGION=us-east-1
       - export AWS_SDK_LOAD_CONFIG=1
       - AWS_PROFILE=default sls deploy
   
