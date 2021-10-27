@@ -1,5 +1,10 @@
 version: 0.2
 
+env:
+   secrets-manager:
+    AWS_ACCESS_KEY_ID: "AWS_CRED_KEYS:AWS_ACCESS_KEY"
+    AWS_SECRET_ACCESS_KEY_ID: "AWS_CRED_KEYS:AWS_SECRET_ACCESS_KEY"
+
 phases:
   install:
     commands:
@@ -10,15 +15,18 @@ phases:
   pre_build:
     commands:
       - echo install pre build commands
+      - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+      - export AWS_SECRET_ACCESS_KEY_ID=$AWS_SECRET_ACCESS_KEY_ID
       - serverless config credentials --provider aws --key $AWS_ACCESS_KEY_ID --secret $AWS_SECRET_ACCESS_KEY_ID --profile default
       
   build:
     commands:
+      - cd serverless
       - echo deployment started `date`
       - echo deploy serverless framework custom codebase
       - sls package 
-      - sls deploy
-      - echo final deployment
+      - sls deploy --stage testalpha
+      - echo final deployment 
   post_build:
     commands:
       - echo post build completed on `date`
